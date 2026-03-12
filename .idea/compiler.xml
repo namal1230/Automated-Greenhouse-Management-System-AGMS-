@@ -6,8 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-gateway" />
+        <module name="crop-inventory-service" />
+        <module name="sensor-telemetry-service" />
         <module name="config-server" />
+        <module name="automation-and-control-service" />
+        <module name="api-gateway" />
+        <module name="zone-management-service" />
         <module name="service-registry" />
       </profile>
     </annotationProcessing>
@@ -15,8 +19,12 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
+      <module name="automation-and-control-service" options="-parameters" />
       <module name="config-server" options="-parameters" />
+      <module name="crop-inventory-service" options="-parameters" />
+      <module name="sensor-telemetry-service" options="-parameters" />
       <module name="service-registry" options="-parameters" />
+      <module name="zone-management-service" options="-parameters" />
     </option>
   </component>
 </project>

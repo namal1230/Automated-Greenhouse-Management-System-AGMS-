@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Automated Greenhouse Management System (AGMS).iml" filepath="$PROJECT_DIR$/.idea/Automated Greenhouse Management System (AGMS).iml" />
       <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/automation-and-control-service/automation-and-control-service.iml" filepath="$PROJECT_DIR$/automation-and-control-service/automation-and-control-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zone-management-service/zone-management-service.iml" filepath="$PROJECT_DIR$/zone-management-service/zone-management-service.iml" />
     </modules>
   </component>
 </project>
