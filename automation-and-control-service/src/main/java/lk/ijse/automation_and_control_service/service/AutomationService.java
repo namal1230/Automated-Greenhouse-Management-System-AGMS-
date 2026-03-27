@@ -1,5 +1,7 @@
 package lk.ijse.automation_and_control_service.service;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import lk.ijse.automation_and_control_service.dto.SensorDataDTO;
 import lk.ijse.automation_and_control_service.dto.ZoneDTO;
 import lk.ijse.automation_and_control_service.entity.AutomationLog;
@@ -17,6 +19,8 @@ public class AutomationService {
     private final ZoneClient zoneClient;
     private final AutomationLogRepository repository;
 
+    @Retry(name = "zone-management-service")
+    @CircuitBreaker(name = "zone-management-service", fallbackMethod = "zoneFallback")
     public void processSensorData(SensorDataDTO data) {
 
         if (data == null || data.getValue() == null) {
@@ -46,6 +50,21 @@ public class AutomationService {
                 temp,
                 humidity,
                 action,
+                LocalDateTime.now()
+        );
+
+        repository.save(log);
+    }
+
+    public void zoneFallback(SensorDataDTO data, Exception ex) {
+        System.out.println("Fallback triggered!");
+
+        AutomationLog log = new AutomationLog(
+                null,
+                data.getZoneId(),
+                data.getValue().getTemperature(),
+                data.getValue().getHumidity(),
+                "SERVICE_DOWN",
                 LocalDateTime.now()
         );
 
