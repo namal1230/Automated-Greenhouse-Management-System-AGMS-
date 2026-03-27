@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/4fe90303-f0ef-4a59-8f9d-07e195f06cc8
 # 🌱 Automated Greenhouse Management System (AGMS)
 
 A **Microservices-based Smart Agriculture Platform** designed to automate greenhouse monitoring and control using real-time sensor data.
@@ -76,7 +78,8 @@ This system follows a **Microservices Architecture** using Spring Boot and Sprin
 - Zipkin
 <img width="1190" height="1193" alt="Screenshot 2026-03-27 031115" src="https://github.com/user-attachments/assets/fc20f01a-1fc1-4e89-bd8d-c359b99ea61a" />
 
-  
+![AGMS Demo](https://user-images.githubusercontent.com/4fe90303-f0ef-4a59-8f9d-07e195f06cc8/demo.gif)
+
 ---
 
 ## 🚀 Microservices Description
