@@ -19,7 +19,15 @@ public class AutomationService {
 
     public void processSensorData(SensorDataDTO data) {
 
-        ZoneDTO zone = zoneClient.getZone(data.getZoneId());
+        if (data == null || data.getValue() == null) {
+            throw new IllegalArgumentException("Sensor data or value cannot be null");
+        }
+
+        Long zoneId = parseZoneId(data.getZoneId());
+        ZoneDTO zone = zoneClient.getZone(zoneId);
+        if (zone == null) {
+            throw new IllegalArgumentException("Zone not found for id: " + data.getZoneId());
+        }
 
         double temp = data.getValue().getTemperature();
         double humidity = data.getValue().getHumidity();
@@ -46,5 +54,22 @@ public class AutomationService {
 
     public List<AutomationLog> getLogs() {
         return repository.findAll();
+    }
+
+    private Long parseZoneId(String zoneId) {
+        if (zoneId == null || zoneId.isBlank()) {
+            throw new IllegalArgumentException("Zone id cannot be null or blank");
+        }
+
+        String normalized = zoneId.trim();
+        if (normalized.startsWith("zone-")) {
+            normalized = normalized.substring("zone-".length());
+        }
+
+        try {
+            return Long.parseLong(normalized);
+        } catch (NumberFormatException ex) {
+            throw new IllegalArgumentException("Invalid zone id format: " + zoneId, ex);
+        }
     }
 }
