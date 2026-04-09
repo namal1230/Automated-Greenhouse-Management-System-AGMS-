@@ -1,0 +1,386 @@
+{
+  "info": {
+    "_postman_id": "c64cf248-eb00-4ee1-81c7-578804cf81fa",
+    "name": "AGMS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44455142"
+  },
+  "item": [
+    {
+      "name": "AUTOMATION-AND-CONTROL-SERVICE",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8083/api/automation/logs",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "api",
+            "automation",
+            "logs"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AUTOMATION-AND-CONTROL-SERVICE",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"deviceId\": \"test-device\",\r\n  \"zoneId\": \"zone-1\",\r\n  \"value\": {\r\n    \"temperature\": 35,\r\n    \"humidity\": 60\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8083/api/automation/process",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "api",
+            "automation",
+            "process"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "API-GATEWAY",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8765/api/automation/logs",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8765",
+          "path": [
+            "api",
+            "automation",
+            "logs"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ZONE-MANAGEMENT-SERVICE",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/zones/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "zones",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ZONE-MANAGEMENT-SERVICE",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Tomato Zone\",\r\n  \"minTemp\": 20,\r\n  \"maxTemp\": 30\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/zones",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "zones"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CROP-INVENTORY-SERVICE",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/api/crops",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "crops"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CROP-INVENTORY-SERVICE",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Tomato Batch 1\",\r\n  \"stage\": \"SEEDLING\",\r\n  \"quantity\": 100\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8084/api/crops",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "crops"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CROP-INVENTORY-SERVICE",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/api/crops/66a83fb2-7794-46a5-b928-883941d6edca",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "crops",
+            "66a83fb2-7794-46a5-b928-883941d6edca"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CROP-INVENTORY-SERVICE",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8084/api/crops/66a83fb2-7794-46a5-b928-883941d6edca/status?stage=VEGETATIVE",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "crops",
+            "66a83fb2-7794-46a5-b928-883941d6edca",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "stage",
+              "value": "VEGETATIVE"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CROP-INVENTORY-SERVICE",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/api/crops/66a83fb2-7794-46a5-b928-883941d6edca",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "crops",
+            "66a83fb2-7794-46a5-b928-883941d6edca"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RabbitMQ",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:15672/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "15672",
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Circuit-Breaker",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8083/actuator/circuitbreakers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "actuator",
+            "circuitbreakers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Circuit-Breaker-Status",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8083/actuator/circuitbreakerevents",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "actuator",
+            "circuitbreakerevents"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "busrefresh",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8083/actuator/busrefresh",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "actuator",
+            "busrefresh"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
